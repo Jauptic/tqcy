@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>历史脉络</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/css/bootstrap.min.css" rel="stylesheet">
+		<script src="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/js/bootstrap.bundle.min.js"></script>
+		<script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
+		<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+		<style>
+			body {
+				background: url("./img/ditu.jpg") 0 / cover fixed;
+			}
+
+			.head {
+				width: 100%;
+				height: 80px;
+				text-align: center;
+				font-size: large;
+				color: #faf9f9;
+			}
+
+			.datu {
+				width: 65%;
+				height: 450px;
+			}
+
+			.sum {
+				width: 65%;
+				margin: 0 auto;
+				background-color:#94958d;
+				opacity: 0.9;
+			}
+
+			.qiyuan,
+			.fazhan,
+			.yincha {
+				margin: 0 auto 10px;
+				color: black;
+				width: 65%;
+			}
+
+			.qiyuan1 {
+				margin-left: 40px;
+				margin-right: 40px;
+				font-size: 20px;
+			}
+
+			.history1,
+			.history2,
+			.history3,
+			.history4,
+			.history5,
+			.history6 {
+				width: 65%;
+				height: 190px;
+				margin: 0 auto;
+				border: 7px solid rgb(0, 0, 0);
+				border-radius: 55px;
+			}
+
+			.left1,
+			.left3,
+			.left5 {
+				width: 25%;
+				height: 100%;
+				text-align: center;
+			}
+
+			.right1,
+			.right3,
+			.right5 {
+				width:75%;
+				height: 100%;
+				background-color: rgba(243, 242, 225, 0.89);
+				border-radius: 0 50px 50px 0;
+			}
+
+			.left2,
+			.left4,
+			.left6{
+				width:75%;
+				height: 100%;
+				background-color: rgba(243, 242, 225, 0.89);
+				border-radius: 50px 0 0 50px;
+			}
+
+			.right2,
+			.right4,
+			.right6{
+				width: 25%;
+				height: 100%;
+				background: #e0ccacc3;
+				text-align: center;
+			}
+
+			.biaotou {
+				padding: 60px 0;
+				font-size: 25px;
+				color: rgb(0, 0, 0);
+				font-family: myThirdFont;
+			}
+
+			.left1 {
+				background: url("./img/left1.jpg");
+				background-position: 20% 20%;
+				filter: brightness(65%);
+				border-radius: 50px 0 0 50px;
+			}
+
+			.left3 {
+				background: url("./img/left3.jpg");
+				background-position: 10% 50%;
+				filter: brightness(65%);
+				border-radius: 50px 0 0 50px;
+			}
+
+			.left5 {
+				background: url("./img/left5.jpg");
+				background-position: 60% 27%;
+				filter: brightness(65%);
+				border-radius: 50px 0 0 50px;
+			}
+
+			.right2 {
+				background: url("./img/right2.jpg");
+				background-position: 30% 30%;
+				filter: brightness(65%);
+				border-radius: 0 50px 50px 0;
+			}
+
+			.right4 {
+				background: url("./img/right4.webp");
+				background-position: 0 15%;
+				filter: brightness(65%);
+				border-radius: 0 50px 50px 0;
+			}
+
+			.right6 {
+				background: url("./img/right6.jpg");
+				background-position: 50% 20%;
+				filter: brightness(65%);
+				border-radius: 0 50px 50px 0;
+			}
+
+			.p1,
+			.p3,
+			.p5 {
+				margin-top: 30px;
+				padding-left: 30px;
+				padding-right: 30px;
+				font-size: 18px;
+			}
+
+			.p2,
+			.p4,
+			.p6 {
+				margin-left: 35px;
+				margin-right: 35px;
+				margin-top: 10PX;
+				font-size: 18px;
+			}
+			.img1,
+			.img2,  
+			.img3 {
+				width: 85%;
+				height: 270px;
+				margin-left: 20px;
+				margin-top: 20px;
+			}
+
+			.yincha1,
+			.yincha2,
+			.yincha3 {
+				background: #faf9f9e2;
+				height: 800px;
+				border: 5px solid #94958d;
+			}
+
+			h3 {
+				text-align: center;
+			}
+
+			.yanbian {
+				margin-left: 20px;
+				margin-right: 20px;
+				font-size: 20px;
+			}
+
+			.chawenhua {
+				color: #fff6e9;
+				text-align: center;
+			}
+
+			.chawenhua1 {
+				width: 65%;
+				height: 460px;
+				margin: 0 auto;
+				background: #faf9f9d9;
+				border: 5px solid #94958d;
+			}
+
+			.imglast {
+				width: 300px;
+				height: 360px;
+				padding-left: 30px;
+				padding-top: 80px;
+			}
+
+			.chawenhuap1 {
+				padding: 30px;
+				font-size: 20px;
+			}
+
+			.log {
+				line-height: 50px;
+				font-family: myFirstFont;
+			}
+
+			.logg {
+				width: 50px;
+				height: 50px;
+			}
+
+			a:link {
+				text-decoration: none;
+			}
+
+			.foot {
+				width: 65%;
+				height: 200px;
+				margin: 100px auto 50px;
+				background: #ffffffab;
+			}
+
+			.foot-logo {
+				width: 200px;
+				height: 200px;
+			}
+
+			.foot-1 {
+				padding-left: 50px;
+				padding-top: 40px;
+			}
+
+			.foot-p {
+				padding-left: 55px;
+				padding-top: 15px;
+			}
+
+			.foot-p2 {
+				padding-left: 55px;
+			}
+
+			.arrow {
+				border: 9px solid transparent;
+				border-bottom-color: #db913d;
+				width: 0px;
+				height: 0px;
+				top: 0px
+			}
+
+			.stick {
+				width: 8px;
+				height: 14px;
+				border-radius: 1px;
+				background-color: #db913d;
+				top: 15px;
+			}
+
+			#back_top div {
+				position: absolute;
+				margin: auto;
+				right: 0px;
+				left: 0px;
+			}
+
+			#back_top {
+				background-color: #dddddd;
+				height: 38px;
+				width: 38px;
+				border-radius: 3px;
+				display: block;
+				cursor: pointer;
+				position: fixed;
+				right: 50px;
+				bottom: 100px;
+				display: none;
+				border-radius: 20px;
+			}
+
+			@font-face {
+				font-family: myFirstFont;
+				src: url('Aa剑豪体.TTF');
+			}
+
+			@font-face {
+				font-family: mySecondFont;
+				src: url('王汉宗中魏碑简体-免費商用.TTF');
+			}
+
+			@font-face {
+				font-family: myThirdFont;
+				src: url('润植家康熙字典美化体.TTF');
+			}
+
+			@font-face {
+				font-family: myFourthFont;
+				src: url('飞花宋体.TTF');
+			}
+
+			h3,
+			h2 {
+				color: #000;
+				font-family: mySecondFont;
+			}
+
+			p {
+				font-family: myFourthFont;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<div style="width: 100%;height: 50px;background: rgba(247, 247, 247, 0.744);">
+				<div style="float: left;width: 50px;height: 50px;"><img src="img/logo.png" class="logg"></div>
+				<div style="float: left;">
+					<h6 class="log">陶情瓷艺</h6>
+				</div>
+				<div style="float:right;margin-right: 40px;"><a href="../首页/index.html" style="color: #131313;">
+						<h6 class="log">返回首页</h6>
+					</a></div>
+			</div>
+			<br><br>
+<div class="width-max" style="max-width:1500px; margin:0 auto;min-width:1400px;">
+			<div class="head" align="center">
+				<h2>历史脉络</h2>
+			</div>
+			<div id="demo" class="carousel slide" data-bs-ride="carousel"
+				style="width: 65%;height: 400px;margin: 0 auto;box-shadow: 15px 14px 10px#362b24;">
+				<div class="carousel-indicators">
+					<button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+					<button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+					<button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+					<button type="button" data-bs-target="#demo" data-bs-slide-to="3"></button>
+				</div>
+				<div class="carousel-inner">
+					<div class="carousel-item active">
+						<a href="#">
+							<img src="./img/1lunbo1.webp"
+								class="d-block"  style="width:100%;height: 400px;">
+						</a>
+					</div>
+					<div class="carousel-item">
+						<a href="#">
+							<img src="./img/1lunbo2.jpg"
+								class="d-block"  style="width:100%;height: 400px;">
+						</a>
+					</div>
+					<div class="carousel-item">
+						<a href="#">
+							<img src="./img/1lunbo3.jpg"
+								class="d-block"  style="width:100%;height: 400px;">
+						</a>
+					</div>
+					<div class="carousel-item">
+						<a href="#">
+							<img src="./img/1lunbo4.jpg"
+								class="d-block"  style="width:100%;height: 400px;">
+						</a>
+					</div>
+
+				</div>
+				<button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+					<span class="carousel-control-prev-icon"></span>
+				</button>
+				<button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+					<span class="carousel-control-next-icon"></span>
+				</button>
+			</div>
+			<h2 class="qiyuan"><br>起源</h2>
+			<div class="sum">
+				<P class="qiyuan1"><br>
+					&nbsp;&nbsp;&nbsp;&nbsp;关于瓷器的起源，有许多传说。其中最为流传的是黄帝时代的故事。相传，黄帝时代有两兄弟分别叫“陶唐”和“陶自言”，他们在河边发现一块美玉，灵机一动，想要仿造出和玉一样的容器。于是，两兄弟开始学习陶瓷的制作工艺，并不断探索和实践。经多年的研究，他们终于成功地制作出了一种质地坚硬、色泽纯美的瓷器。从此，瓷器的制作在中国传开，成为了一种历史悠久的工艺传统。
+				<br>&nbsp;</P>
+			</div>
+			<h2 class="fazhan"><br>发展</h2>
+			<div class="history1">
+				<div class="left1" style="float:left;">
+					<p class="biaotou">商周到秦汉时期</p>
+				</div>
+				<div class="right1" style="float:right;">
+					<p class="p1">
+						&nbsp;&nbsp;&nbsp;
+						商周时期是原始青瓷器的初创时期，商代开始有烧造痕迹，整体呈青绿色、胎体硬度高。
+						东汉是瓷器真正烧造而成时，只有青瓷和黑瓷两种。胎釉结合相当牢固，瓷化程度好，陶瓷工艺有所提高，代表瓷器有东汉青釉扁壶。
+					</p>
+				</div>
+			</div>
+			<br><br>
+			<div class="history2">
+				<div class="left2" style="float:left;">
+					<p class="p2">
+						<br>
+						&nbsp;&nbsp;&nbsp;
+						魏晋南北朝时期窑口猛增，青瓷盛行，南方青瓷多灰青色，而北方青瓷多黄绿。装饰手段越发多样，烧造工艺有进步，
+						代表瓷器有南朝莲花纹印花青瓷盘。白瓷的烧造成功是隋代陶瓷的一个重要成就，形制秀美，瓷质坚硬，代表瓷器有隋白釉龙柄象首壶。
+					</p>
+				</div>
+				<div class="right2" style="float:right;">
+					<p class="biaotou">魏晋南北朝及隋代</p>
+				</div>
+			</div>
+			<br><br>
+			<div class="history3">
+				<div class="left3" style="float:left;">
+					<p class="biaotou">唐宋时期</p>
+				</div>
+				<div class="right3" style="float:right;">
+					<p class="p3">
+						&nbsp;&nbsp;&nbsp;
+						唐朝瓷器蓬勃发展，“南青北白”格局奠定，瓷质提高，胎质更加细腻紧密，釉色更加匀净光润，制瓷工艺趋于完善，烧出了
+						类玉、类冰的越窑青瓷及类银、类雪的邢窑白瓷，除青釉、白釉普遍盛行外，黑釉烧造地也比较广泛。宋朝达到瓷器历史上前所未有的高峰，
+						全国窑口众多，宋瓷的美学造诣极高，形成了汝官哥钧定五大名窑。
+					</p>
+				</div>
+			</div>
+			<br><br>
+			<div class="history4">
+				<div class="left4" style="float:left;">
+					<p class="p4">
+						<br>
+						&nbsp;&nbsp;&nbsp;
+						元朝的青花瓷的出现改变了瓷器的历史。在元代，景德镇发明了高岭土十瓷石的二元配方，奠定了青花瓷的烧造工艺，
+						使得青花瓷在元代发展迅速。青花瓷的发展颠覆了“南青北白”的原有瓷器格局，加上元政府的重视，
+						在景德镇设立第一个瓷器管理机构一浮梁瓷局，使得景德镇的制瓷中心地位一跃而起。
+					</p>
+				</div>
+				<div class="right4" style="float:right;">
+					<p class="biaotou">元朝时期</p>
+				</div>
+			</div>
+			<br><br>
+			<div class="history5">
+				<div class="left5" style="float:left;">
+					<p class="biaotou">明清时期</p>
+				</div>
+				<div class="right5" style="float:right;">
+					<p class="p5">
+						&nbsp;&nbsp;&nbsp;
+						明五彩、颜色釉均有所发展，其中永乐甜白釉和宣德红釉都比较有名。
+					    清朝—瓷器的鼎盛时期，无论是青花、斗彩还是其他颜色釉，都有了前所未有的发展。
+						但是珐琅彩粉彩的彩瓷发展，慢慢削弱了青花唯一的霸主地位。尤其在乾隆朝，粉彩的发展到有和青花平分天下的态势。
+
+					</p>
+				</div>
+			</div>
+			<br><br>
+			<div class="history6">
+				<div class="left6" style="float:left;">
+					<p class="p6">
+						<br>
+						&nbsp;&nbsp;&nbsp;
+						近代陶瓷整体风格精致典雅，品种繁多。现代陶瓷，尤其是新中国成立以后的陶瓷业，
+						在继承古典陶瓷艺术的基础上也摆脱了古典主义思想的审美桎梏，
+						与时俱进地发展出了符合现代人需要和审美的诸多陶瓷种类，使繁荣数千年几经战火摧残的伟大艺术，焕发了前所未有的勃勃生机。
+					</p>
+				</div>
+				<div class="right6" style="float:right;">
+					<p class="biaotou">近现代</p>
+				</div>
+			</div>
+			<br><br>
+			<div class="yincha">
+				<h2>瓷器工艺的演变</h2>
+			</div>
+			<div>
+				<div style="width: 65%;margin: 0 auto;height: 850px;">
+					<div class="yincha1" style="width:30%;float:left;">
+						<img src="./img/yanbian1.jpeg" class="img1" title="拍坯成形">
+						<h3>拍坯成形</h3>
+						<p class="yanbian">
+							&nbsp;&nbsp;&nbsp;原始社会，古人在平地上将粘土搓成泥条盘叠成简单的陶器粗坯然后修整，小件器物直接捏塑而成较大的陶罐用八层泥条盘塑，
+							是陶轮的雏形，这种成形方法在云南勐海县曼贺地区现在还可见到，以制陶罐为例，先在木板上用光拍拍打泥片
+						    成陶罐底部，再用泥条盘塑成粗坯经阴干、拍打整形然后用带花纹的拍板，拍印出兰纹、方格纹或水浪纹。
+					</div>
+					<div class="yincha2" style="width:30%;float:left;margin-left: 35px;">
+						<img src="./img/yanbian2.jpeg" class="img2" title="陶轮拉坯">
+						<h3>陶轮拉坯</h3>
+						<p class="yanbian">
+							&nbsp;&nbsp;&nbsp;在木板下加一个倒截的圆锥木墩成形时能在地上转动,这是陶轮的前身。后来在木墩中心开洞
+							地面上再安插一根木头支杆，木墩装置在支杆上转动即成陶轮。良渚文化、龙山文化时期，则开始采用快轮拉坯成形碗、
+							盏等小件器物。成形系用快轮拉坯成形和修坯方法的改进，能够堆贴、压印各种人物、动物刻划各种花纹图案。
+					</div>
+					<div class="yincha3" style="width:30%;float:right;">
+						<img src="./img/yanbian3.webp" class="img3" title="青瓷谷仓">
+						<h3>青瓷谷仓</h3>
+						<p class="yanbian">
+							&nbsp;&nbsp;&nbsp;绍兴出土的东吴永安三年,高达47厘米的青瓷谷仓,主体是用快轮拉坯成形的谷仓上堆贴的乐伎人物、鱼龙水龟、
+							守卫门犬和佛象亭阙部分用手工捏塑成形,部分用陶模压印成形,也有拍片成形的各种小件还需经刻划修饰后,
+							再安装在坯体上工艺十分复杂,集中反映了当时的成形技术水平,每一项技艺都需要经过千锤百炼,历经百年千年才略显成熟。
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="chawenhua">
+				<h2>中国陶瓷文化的研究</h2>
+			</div>
+			<div>
+				<div class="chawenhua1">
+					<div style="float: right;width: 65%;">
+						<p class="chawenhuap1">
+							<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;瓷器，这种源自中国的精致艺术品，已经成为了全球公认的文化遗产。它不仅是实用器皿，更是中国文化传承与创新的重要载体。瓷器的历史可以追溯到新石器时代晚期，那时的中国已经开始制作陶器。然而，真正的瓷器出现在东汉时期，当时的中国已经掌握了高温烧制技术。从那时起，瓷器就开始了它漫长而辉煌的历史。
+							<br><br>
+							&nbsp;&nbsp;&nbsp;&nbsp;瓷器是中国文化的象征之一，它反映了中国人对美的追求和对和谐的向往。今天，瓷器已经成为了中国文化的重要代表之一。无论是在国内还是国际上，瓷器都受到了广泛的欢迎和赞誉。它是中国与世界交流的桥梁，是中国文化的名片。
+						</p>
+					</div>
+					<div style="float: left;width: 35%;">
+						<img src="./img/yanjiu.jpg" class="imglast"
+							title="中国陶瓷文化传承">
+					</div>
+				</div>
+			</div>
+			<div class="foot">
+				<div style="float: left;padding-left: 100px;">
+					<img src="./img/logo.png" class="foot-logo">
+				</div>
+				<div style="float:left;padding-left: 180px;">
+					<h3 class="foot-1"><b>陶情瓷艺</b></h3>
+					<div style="float: left;">
+						<a href="##" style="color: #131313;">
+							<p class="foot-p">联系我们</p>
+						</a>
+						<a href="##" style="color: #131313;">
+							<p class="foot-p2">帮助中心</p>
+						</a>
+					</div>
+					<div style="float: left;">
+						<a href="##" style="color: #131313;">
+							<p class="foot-p">投诉中心</p>
+						</a>
+						<a href="##" style="color: #131313;">
+							<p class="foot-p2">空间协议</p>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="back_top">
+			<div class="arrow"></div>
+			<div class="stick"></div>
+		</div>
+		<script>
+			$(function() {
+				$(window).scroll(function() {
+					var scrollt = document.documentElement.scrollTop + document.body.scrollTop;
+					if (scrollt > 200) {
+						$("#back_top").fadeIn(400);
+					} else {
+						$("#back_top").stop().fadeOut(400);
+					}
+				});
+				$("#back_top").click(function() {
+					$("html,body").animate({
+						scrollTop: "0px"
+					}, 200);
+				});
+			});
+		</script>
+</div>
+	</body>
+</html>
